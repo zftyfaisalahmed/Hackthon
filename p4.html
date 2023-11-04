@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-4</title>
+</head>
+<body>
+<script>
+    document.write(`Output = `)
+
+    let nums = [prompt("Enter nums value 1"),prompt("Enter nums value 2"),prompt("Enter nums value 3")]; 
+    let res = permute(nums); 
+
+    function permutations(res, nums, l, h){ 
+        // document.write("nums : [1,2,3] =")
+            if (l == h){ 
+                res.push(nums); 
+                for(let i = 0; i < nums.length; i++) 
+                document.write(nums[i] + ' '); 
+                console.log((nums)); 
+                document.write("<br>")
+        
+                // document.write('],[') 
+            return; 
+        }
+            for(let i = l; i <= h; i++)  { 
+                let temp = nums[l]; 
+                nums[l] = nums[i]; 
+                nums[i] = temp; 
+            
+                permutations(res, nums, l + 1, h); 
+            
+                temp = nums[l]; 
+                nums[l] = nums[i]; 
+                nums[i] = temp; 
+        }
+    } 
+    // document.write("3 2 1]")
+
+    function permute(nums){ 
+            
+        let x = nums.length - 1; 
+        let res = []; 
+              
+        console.log(permutations(res, nums, 0, x)); 
+            return console.log(res); 
+    } 
+</script>
+</body>
+</html>

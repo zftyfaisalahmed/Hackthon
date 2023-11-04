@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-1</title>
+</head>
+<body>
+    <script>
+       
+        function findMissing(arr,N){
+        let i;
+        let temp = [];
+        for (i = 0; i <= N; i++) {
+                    temp[i] = 0;
+                }
+        
+                for (i = 0; i < N; i++) {
+                    temp[arr[i] - 1] = 1;
+                }
+        
+                let ans = 0;
+                for (i = 0; i <= N; i++) {
+                    if (temp[i] == 0)
+                        ans = i + 1;
+                }
+                document.write("Missing Number :", ans);
+        }
+        
+      
+                let arr = [prompt("Enter Input 1st Number"),prompt("Enter Input 2nd Number"),prompt("Enter Input 3rd Number"),prompt("Enter Input 4th Number")];
+                let n = arr.length;
+        
+               
+            findMissing(arr,n);
+        
+        
+        </script>
+        
+</body>
+</html>

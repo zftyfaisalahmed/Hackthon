@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-2</title>
+</head>
+<body>
+  
+<script>
+const nums= [2, 7, 11, 15]
+const target = 9;
+
+var sum = function(nums, target) {
+    for(let i = 0; i <= nums; i++){
+        for(let j = 0; j <= nums; j++){
+            if(nums[i] + nums[j] === target){
+                return [i, j]
+            }
+        }
+    }
+};
+
+sum(nums , target)
+
+document.write(nums," = [0 , 1] = ", target);
+// console.log(nums," = [0 , 1] = ", target);
+
+</script>
+</body>
+</html>

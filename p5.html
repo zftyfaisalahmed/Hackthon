@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-5</title>
+</head>
+<body>
+    <script>
+
+document.write("Output = ")
+
+
+    
+	function parenthesis( str , pos , n , open , close) 
+	{
+		if (close == n)
+		{
+		
+			for (let i = 0; i < str.length; i++)
+				document.write(str[i], " ");
+			document.write("<br/>");
+			return;
+		} 
+		else
+		{
+			if (open > close)
+			{
+				str[pos] = ')';
+				parenthesis(str, pos + 1, n, open, close + 1);
+			}
+			if (open < n) 
+			{
+				str[pos] = '(';
+				parenthesis(str, pos + 1, n, open + 1, close);
+			}
+		}
+	}
+
+	function printParenthesis( str , n)
+	{
+		if (n > 0)
+			parenthesis(str, 0, n, 0, 0);
+		return;
+	}
+
+    
+	var n = prompt("Enter n = 1 or 3", n);
+	// var n = 3;
+	var str = new Array(2 * n);
+	printParenthesis(str, n);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-3</title>
+</head>
+<body>
+    <script>
+// let num = roman(num)
+
+        function roman(num) {
+            if (typeof num !== 'number') 
+            return false; 
+
+            var digits = String(+num).split(""),
+            key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM", "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC", "","I","II","III","IV","V","VI","VII","VIII","IX"],
+            roman1 = "",
+            i = 3;
+            while (i--)
+            roman1 = (key[+digits.pop() + (i * 10)] || "") + roman1;
+            return Array(+digits.join("") + 1).join("M") + roman1;
+        }
+
+        // console.log(roman(3));
+        document.write("Number : 3 =  Roman : ", roman(3), "<br>");
+        document.write("Number : 6 =  Roman : ", roman(6), "<br>");
+        document.write("Number : 12 =  Roman : ", roman(12), "<br>");
+    </script>
+</body>
+</html>
